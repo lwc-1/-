@@ -1,0 +1,25 @@
+﻿case_id,l1,l2,l3,case_type,overall_score,pass,format_valid,rule_score_hint,instruction_following,content_accuracy,format_compliance,completeness,consistency,bad_case_tags,final_answer
+DOC-IE-001,办公文档处理能力,信息抽取,会议纪要待办抽取,single_turn,3.6,False,True,4,3,3,3,4,5,minor_issue,"[
+  {""task"": ""完成首页提测"", ""owner"": ""张三"", ""deadline"": ""5月15日""},
+  {""task"": ""接口文档更新"", ""owner"": ""李四"", ""deadline"": ""5月12日""},
+  {""task"": ""修复服务器配置"", ""owner"": ""赵六"", ""deadline"": ""5月11日""},
+  {""task"": ""用户反馈模块开发"", "
+DOC-IE-002,办公文档处理能力,信息抽取,合同/通知关键信息抽取,single_turn,4.2,True,True,3,4,5,4,3,5,,"[
+  {""task"": ""完成首页提测"", ""owner"": ""张三"", ""deadline"": ""5月15日""},
+  {""task"": ""接口文档更新"", ""owner"": ""李四"", ""deadline"": ""5月12日""},
+  {""task"": ""修复服务器配置"", ""owner"": ""赵六"", ""deadline"": ""5月11日""},
+  {""task"": ""用户反馈模块开发"", "
+DOC-IE-003,办公文档处理能力,信息抽取,表格字段抽取,single_turn,4.4,True,True,3,4,5,5,4,4,,"[
+  {""task"": ""完成首页提测"", ""owner"": ""张三"", ""deadline"": ""5月15日""},
+  {""task"": ""接口文档更新"", ""owner"": ""李四"", ""deadline"": ""5月12日""},
+  {""task"": ""修复服务器配置"", ""owner"": ""赵六"", ""deadline"": ""5月11日""},
+  {""task"": ""用户反馈模块开发"", "
+DOC-IE-004,办公文档处理能力,信息抽取,会议纪要待办抽取,single_turn,4.2,True,True,4,4,3,4,5,5,,"[
+  {""task"": ""完成首页提测"", ""owner"": ""张三"", ""deadline"": ""5月15日""},
+  {""task"": ""接口文档更新"", ""owner"": ""李四"", ""deadline"": ""5月12日""},
+  {""task"": ""修复服务器配置"", ""owner"": ""赵六"", ""deadline"": ""5月11日""},
+  {""task"": ""用户反馈模块开发"", "
+DOC-IE-005,办公文档处理能力,信息抽取,合同/通知关键信息抽取,single_turn,4.4,True,False,2,4,4,5,4,5,,"根据您提供的文档内容，我已完成信息整理。核心要点如下：
+1. 已完成关键信息提取
+2. 数据准确性已确认
+3. 建议持续关注优先级最高的事项"
