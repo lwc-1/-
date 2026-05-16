@@ -53,6 +53,30 @@ def main():
         action="store_true",
         help="使用 Mock 模式运行（不调用真实 API）",
     )
+    parser.add_argument(
+        "--candidate-model",
+        type=str,
+        default=None,
+        help="覆盖被测模型名称（如 deepseek-chat, Qwen/Qwen2.5-7B-Instruct）",
+    )
+    parser.add_argument(
+        "--candidate-base-url",
+        type=str,
+        default=None,
+        help="覆盖被测模型 Base URL",
+    )
+    parser.add_argument(
+        "--candidate-api-key",
+        type=str,
+        default=None,
+        help="覆盖被测模型 API Key",
+    )
+    parser.add_argument(
+        "--run-name",
+        type=str,
+        default=None,
+        help="本次运行的标签名（用于区分不同模型的结果）",
+    )
 
     args = parser.parse_args()
 
@@ -70,10 +94,26 @@ def main():
     print("=" * 60)
     print()
 
+    # 应用命令行覆盖配置
+    from src.config import Config
+    if args.candidate_model:
+        Config.candidate_model = args.candidate_model
+    if args.candidate_base_url:
+        Config.candidate_base_url = args.candidate_base_url
+    if args.candidate_api_key:
+        Config.candidate_api_key = args.candidate_api_key
+
+    # 确定输出目录
+    output_dir = args.output_dir
+    if not output_dir and args.run_name:
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_dir = f"outputs/{args.run_name}_{timestamp}"
+
     # 创建并运行评测
     runner = EvaluationRunner(
         cases_path=str(cases_path),
-        output_dir=args.output_dir,
+        output_dir=output_dir,
         max_cases=args.max_cases,
         mock=args.mock,
     )
