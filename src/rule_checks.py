@@ -25,6 +25,9 @@ def run_rule_checks(answer: str, case: dict) -> dict:
 
     expected_format = case.get("expected_format", "")
     constraints = case.get("constraints", {})
+    # 兼容LLM生成的用例中constraints为字符串的情况
+    if not isinstance(constraints, dict):
+        constraints = {}
 
     # 1. 格式校验
     if expected_format == "json":
